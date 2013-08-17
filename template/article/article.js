@@ -33,10 +33,13 @@ $(function() {
 		 */
 		init: function() {
 			var args = $.getQueryStringArgs(),
-				url = "/lightinblog/template/php/getInfo.php",
+				url = "/lightinblog/template/php/lightinblog.php",
 				getArgs = {
 					type: 1,
-					id: args["id"]
+					id: args["id"],
+					author: 0,
+					category: 0,
+					name: 0
 				};
 
 			$.get(url, getArgs, $.proxy(this.callback, getArgs), "json");
