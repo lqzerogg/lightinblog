@@ -1,65 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>lightinBlog</title>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="../lib/css/bootstrap.css" rel="stylesheet">
-    <link href="base.css" rel="stylesheet">
     <link href="../lib/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+    <link href="../lib/css/base.css" rel="stylesheet">
+    <link href="../lib/css/flat-ui.css" rel="stylesheet">
+
   </head>
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <a href="#">litbBlog</a>
-    </div>
+    <div class="container">
+        <div class="demo-headline">
+            <h1 class="demo-logo">
+              <div class="logo"></div>
+              LightInTheBlog
+              <small>Freshmen Show</small>
+            </h1>
+        </div> <!-- /demo-headline -->
 
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-            </ul>
-          </div>
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="span9">
-          <div class="hero-unit">
-  
-          </div>
-          <div id="article"class="row-fluid">
-          </div>
+        <div class="row demo-row">
+            <div class="span15">
+              <div class="navbar navbar-inverse">
+                <div class="navbar-inner">
+                  <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#nav-collapse-01"></button>
+                    <div class="nav-collapse collapse" id="nav-collapse-01">
+                      <ul class="nav">
+                        <li>
+                          <a href="#fakelink">
+                            Menu
+                            <span class="navbar-unread">1</span>
+                          </a>
+                        </li>
+                        <li class="active">
+                          <a href="#fakelink">
+                            Home
+                            <span class="navbar-unread">1</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#fakelink">
+                            About Us
+                          </a>
+                        </li>
+                      </ul>
+                    </div><!--/.nav -->
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div> <!-- /row -->
+        <div class="row demo-tiles">
+            <div class="span3 demo-filter">
+                <div class="todo mrm">
+                    
+                    <ul>
+                        <li class="" id="categoryOne">
+                            <div class="todo-content">
+                                <h4 class="todo-name">
+                                    <strong>Culture</strong>
+                                </h4>
+                            </div>
+                        </li>
+                        
+                        <li class="" id="categoryTwo">
+                            <div class="todo-content">
+                                <h4 class="todo-name">
+                                    <strong>Science</strong>
+                                </h4>
+                            </div>
+                        </li>
+                        
+                        <li class="" id="categoryThree">
+                            <div class="todo-content">
+                                <h4 class="todo-name">
+                                    <strong>Life</strong>
+                                </h4>
+                            </div>
+                        </li>
+                        
+                        <li class="" id="categoryFour">
+                            <div class="todo-content">
+                                <h4 class="todo-name">
+                                    <strong>Nature</strong>
+                                </h4>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="search-field">
+                        <div class="search-spacer">
+                            In Above Categories:
+                        </div>
+                        <div class="todo-search">
+                            <input id="author" type="search" placeholder="Search Author" value="" class="todo-search-field">
+                        </div>
+                        <div class="todo-search">
+                            <input id="article" type="search" placeholder="Search Title" value="" class="todo-search-field">
+                        </div>
+                        <a href="#" class="btn btn-primary btn-block btn-large">Search</a>
+                    </div>
+                </div>
+            </div>
+          <div class="span12"></div>
         </div>
       </div>
-
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
-
     </div><!--/.fluid-container-->
 
     <!-- Le javascript
@@ -78,6 +130,7 @@
     <script src="../lib/js/bootstrap-collapse.js"></script>
     <script src="../lib/js/bootstrap-carousel.js"></script>
     <script src="../lib/js/bootstrap-typeahead.js"></script>
-    <script src="base.js"></script>
+    <script src="../lib/js/application.js"></script>   
+    <script src="../lib/js/base.js"></script>
   </body>
 </html>

@@ -42,28 +42,29 @@ $(function() {
 					name: 0
 				};
 
-			$.get(url, getArgs, $.proxy(this.callback, getArgs), "json");
+			//$.get(url, getArgs, $.proxy(this.callback, getArgs), "json");
+			this.callback();
 		},
 
 		/**
 		 * @description 回调方法
 		 */
 		callback: function(json) {
-			/*json = {
+			json = {
 				name: "lqzerogg",
 				id: "123465",
 				author: "Zero",
 				category: "technology",
 				text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui"
-			};*/
+			};
 
 			var $heroUnit = $(".hero-unit"),
 				$content = $(".content");
 			
-			if(json && json.length) {
-				$heroUnit.find(".caption").html(this["name"]);
-				$heroUnit.find(".author .text").html(this["author"]);
-				$heroUnit.find(".category .text").html(this["category"]);
+			if(json) {
+				$heroUnit.find(".caption").html(json["name"]);
+				$heroUnit.find(".author .text").html(json["author"]);
+				$heroUnit.find(".category .text").html(json["category"]);
 				$content.html(json["text"]);
 			}else {
 				$heroUnit.find(".error").removeClass("none").html("不存在该文章，请返回首页");
