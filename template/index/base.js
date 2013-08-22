@@ -6,7 +6,7 @@
                     '<img src="../lib/images/1.jpg" alt="picture" class="tile-image"><h3 class="tile-title">'+data.title+
                     '</h3><span class="info">Author:<span id="author">'+data.author+
                     '</span></span><p>'+data.introduction+
-                    '</p><a class="btn btn-primary btn-large btn-block" href="../article/article.html?address='+data.address+
+                    '</p><a class="btn btn-primary btn-large btn-block" href="../article/article.html?id='+data.id+
                     '">View More &raquo;</a></div></div>';
 	}
 	$(function(){
