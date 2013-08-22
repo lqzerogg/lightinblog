@@ -33,39 +33,27 @@ $(function() {
 		 */
 		init: function() {
 			var args = $.getQueryStringArgs(),
-				url = "/lightinblog/template/php/lightinblog.php",
+				url = "../php/blog.php",
 				getArgs = {
-					type: 1,
-					id: args["id"],
-					author: 0,
-					category: 0,
-					name: 0
+					id: args["id"]
 				};
 
-			//$.get(url, getArgs, $.proxy(this.callback, getArgs), "json");
-			this.callback();
+			$.get(url, getArgs, this.callback, "json");			
 		},
 
 		/**
 		 * @description 回调方法
 		 */
 		callback: function(json) {
-			json = {
-				name: "lqzerogg",
-				id: "123465",
-				author: "Zero",
-				category: "technology",
-				text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui"
-			};
 
 			var $heroUnit = $(".hero-unit"),
-				$content = $(".content");
+				$content = $(".content");			
 			
-			if(json) {
-				$heroUnit.find(".caption").html(json["name"]);
-				$heroUnit.find(".author .text").html(json["author"]);
-				$heroUnit.find(".category .text").html(json["category"]);
-				$content.html(json["text"]);
+			if(json) {				
+				$heroUnit.find(".caption").html(json[0]["title"]);
+				$heroUnit.find(".author .text").html(json[0]["author"]);
+				$heroUnit.find(".category .text").html(json[0]["category"]);
+				$content.html(json[0]["contents"]);
 			}else {
 				$heroUnit.find(".error").removeClass("none").html("不存在该文章，请返回首页");
 			}
