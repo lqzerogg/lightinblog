@@ -2,22 +2,23 @@
 	var template = "";
 	var categorySelected = "";
 	var addArticle = function(data){
-		template = template + '<div class="span3" category="'+data.articleCategory+'"><div class="tile">'+
-                    '<img src="../lib/images/1.jpg" alt="picture" class="tile-image"><h3 class="tile-title">'+data.articleTitle+
-                    '</h3><span class="info">Author:<span id="author">'+data.articleAuthor+
-                    '</span></span><p>'+data.article+
-                    '</p><a class="btn btn-primary btn-large btn-block" href="../article/article.html?article='+data.articleId+
+		template = template + '<div class="span3" category="'+data.category+'"><div class="tile">'+
+                    '<img src="../lib/images/1.jpg" alt="picture" class="tile-image"><h3 class="tile-title">'+data.title+
+                    '</h3><span class="info">Author:<span id="author">'+data.author+
+                    '</span></span><p>'+data.introduction+
+                    '</p><a class="btn btn-primary btn-large btn-block" href="../article/article.html?address='+data.address+
                     '">View More &raquo;</a></div></div>';
 	}
 	$(function(){
-		var phpUrl = "../php/readme.json";
+		var phpUrl = "../php/lightinblog.php";
 		$.ajax({
 			type	 : "GET",
 			url		 : phpUrl,
 			dataType : "json",
 			success  : function(data){
-				for(var i = 0; i < data.articlesList.length ; i++){
-					addArticle(data.articlesList[i]);
+				console.log(data);
+				for(var i = 0; i < data.length ; i++){
+					addArticle(data[i]);
 				}
 				$(".span12").html(template);
 			}
@@ -36,14 +37,14 @@
     });
 	$(".btn-primary").click(function(e){
 		e.preventDefault();
-		var testUrl = "../php/readme2.json";
+		var testUrl = "../php/selectblog.php";
 		var author = $("#author").val();
-		var article = $("#article").val();
+		var title = $("#article").val();
 		if(author === ""){
 			author = 0;
 		}
-		if(article === ""){
-			article = 0;
+		if(title === ""){
+			title = 0;
 		}
 		switch(categorySelected)
 		{
@@ -66,11 +67,11 @@
 			type	 : "GET",
 			url		 : testUrl,
 			dataType : "json",
-			data     : { categorySelected: categorySelected, author: author, article: article },
+			data     : { category: categorySelected, author: author, title: title },
 			success  : function(data){
 				template = "";
-				for(var i = 0; i < data.articlesList.length ; i++){
-					addArticle(data.articlesList[i]);
+				for(var i = 0; i < data.length ; i++){
+					addArticle(data[i]);
 				}
 				$(".span12").html(template);
 			}

@@ -2,96 +2,241 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>LightInTheBlog-FreshmenShow</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <!-- Le styles -->
-    <link href="../lib/css/bootstrap.css" rel="stylesheet">
-    <link href="../lib/css/bootstrap-responsive.css" rel="stylesheet">
-    <link rel="stylesheet" href="article.css">
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
-      <script src="../lib/js/html5shiv.js"></script>
+      <script src="js/html5shiv.js"></script>
     <![endif]-->
-
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../lib/img/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../lib/img/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../lib/img/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="../lib/img/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="../lib/img/favicon.png">
+        <style>
+            .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+                width: 1200px;
+            }
+            .span15{
+                width:1200px;
+            }
+            
+            .demo-logo .logo {
+                background: url("images/icons/Book.png") no-repeat scroll center 0 / 200px 200px transparent;
+                height: 200px;
+                margin: 0 auto 26px;
+                overflow: hidden;
+                text-indent: -9999em;
+                width: 256px;
+            }
+            .demo-headline{
+                padding-bottom: 60px;
+            }
+            .demo-filter{
+                width:240px;
+            }
+            
+            
+            .todo li:first-child {
+                -webkit-border-radius: 6px 6px 0 0;
+                -moz-border-radius: 6px 6px 0 0;
+                border-radius: 6px 6px 0 0;
+                padding-bottom: 18px;
+            }
+            .search-spacer {
+                padding: 18px 25px;
+                background-color: #1ABC9C;
+                font: 19px Lato, sans-serif;
+                font-weight: bold;
+                color: #34495e;
+            }
+            .search-field .todo-search {
+                border-radius: 0;
+                padding: 5px 25px;
+                margin: 2px 0;
+                background: #1abc9c;
+            }
+            input.todo-search-field{
+                font-size: 16px;
+            }
+            .todo-search:before {
+                content: '';
+            }
+            .search-field .btn{
+                -webkit-border-radius: 0 0 6px 6px;
+                -moz-border-radius: 0 0 6px 6px;
+                border-radius: 0 0 6px 6px;
+                color: #34495e;
+                font: 19px Lato, sans-serif;
+                font-weight: bold;
+            }
+            input[type="search"]::-webkit-input-placeholder {
+              color: #ECF0F1;
+            }
+            input[type="search"]:-moz-placeholder {
+              color: #ECF0F1;
+            }
+            input[type="search"]:-ms-input-placeholder {
+              color: #ECF0F1;
+            }​
+            .demo-tiles .span12 .span3{
+                width: 293px;
+                margin: 0 10px 10px 10px;
+            }
+            .container-fluid{
+                padding-left: 10px;
+                padding-right: 0;
+            }
+            .hero-unit{
+                padding: 40px 60px 90px 60px;
+            }
+            .row-fluid .offset6 {
+                float:right;
+            }
+            section.content{
+                background-color: #eff0f2;
+                border-radius:6px;
+                padding: 40px;
+                min-height: 400px;
+            }
+            footer {
+                text-align: center;
+            }
+            </style>
   </head>
+<body>
+    <div class="container">
+        <div class="demo-headline">
+            <h1 class="demo-logo">
+              <div class="logo"></div>
+              LightInTheBlog
+              <small>Freshmen Show</small>
+            </h1>
+        </div> <!-- /demo-headline -->
 
-  <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="../index/index.html">lightinblog</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active">                
-                <a href="../index/index.html"><i class="icon-home"></i> Home</a>                
-              </li>
-            </ul>
-          </div><!--/.nav-collapse -->
+        <div class="row demo-row">
+            <div class="span15">
+              <div class="navbar navbar-inverse">
+                <div class="navbar-inner">
+                  <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#nav-collapse-01"></button>
+                    <div class="nav-collapse collapse" id="nav-collapse-01">
+                      <ul class="nav">
+                        <li>
+                          <a href="#fakelink">
+                            Menu
+                            <span class="navbar-unread">1</span>
+                          </a>
+                        </li>
+                        <li class="active">
+                          <a href="#fakelink">
+                            Home
+                            <span class="navbar-unread">1</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#fakelink">
+                            About Us
+                          </a>
+                        </li>
+                      </ul>
+                    </div><!--/.nav -->
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div> <!-- /row -->
+        
+        <div class="row demo-tiles">
+            <div class="span3 demo-filter">
+                <div class="todo mrm">
+                    
+                    <ul>
+                        <li class="">
+                            <div class="todo-content">
+                                <h4 class="todo-name">
+                                    <strong>Culture</strong>
+                                </h4>
+                            </div>
+                        </li>
+                        
+                        <li class="">
+                            <div class="todo-content">
+                                <h4 class="todo-name">
+                                    <strong>Science</strong>
+                                </h4>
+                            </div>
+                        </li>
+                        
+                        <li class="">
+                            <div class="todo-content">
+                                <h4 class="todo-name">
+                                    <strong>Life</strong>
+                                </h4>
+                            </div>
+                        </li>
+                        
+                        <li class="">
+                            <div class="todo-content">
+                                <h4 class="todo-name">
+                                    <strong>Nature</strong>
+                                </h4>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="search-field">
+                        <div class="search-spacer">
+                            In Above Categories:
+                        </div>
+                        <div class="todo-search">
+                            <input type="search" placeholder="Search Author" value="" class="todo-search-field">
+                        </div>
+                        <div class="todo-search">
+                            <input type="search" placeholder="Search Title" value="" class="todo-search-field">
+                        </div>
+                        <a href="#" class="btn btn-primary btn-block btn-large">Search</a>
+                    </div>
+                </div>
+            </div>
+            <div class="span12">
+                <div class="container-fluid">
+                  <div class="row-fluid">
+                    <article class="span12">
+                      <div class="hero-unit">
+                        <p class="error none text-error"></p>
+                        <h1 class="caption">相机应该如何防沙？</h1>
+                        <p class="author offset6">
+                          <span class="small">aaa</span>
+                          <strong class="text"> bbb               
+                          </strong>
+                        </p>
+                        <p class="category offset6">
+                          <span class="small">life</span>
+                          <span class="text">ccc</span>
+                        </p>
+                      </div>
+                      <section class="content">
+                        一点建议
+                        1：尽量用手机
+                        2：允许的话购买防水相机，那种全封闭潜望镜式的。
+                        3：实在要带现有相机，也有解决办法的。
+                        1：防水套，缺点是影响成像。
+                        2：好一些的解决办法，就是贴那种玻璃一样的保护片，贴到DC的镜头口，然后再加上防水套，小小改装下可以解决成像质量的问题。
+                        3：条件许可还是在车内拍摄吧········前提是你有汽车随意使用的话。                      
+                      </section><!--/span-->            
+                    </article><!--/span-->
+                  </div><!--/row-->
+            </div>
         </div>
-      </div>
+        </div> <!-- /tiles -->
     </div>
-
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <article class="span12">
-          <div class="hero-unit">
-            <p class="error none text-error"></p>
-            <h1 class="caption"></h1>
-            <p class="author offset6">
-              <span class="small"></span>
-              <strong class="text">                
-              </strong>
-            </p>
-            <p class="category offset6">
-              <span class="small"></span>
-              <span class="text"></span>
-            </p>
-          </div>
-          <section class="content">                      
-          </section><!--/span-->            
-        </article><!--/span-->
-      </div><!--/row-->
-
-      <hr>
-
-      <footer>
+    <footer>
         <p>&copy; lightinthebox 2013</p>
-      </footer>
-
-    </div><!--/.fluid-container-->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../lib/js/jquery.js"></script>
-    <script src="../lib/js/bootstrap-transition.js"></script>
-    <script src="../lib/js/bootstrap-alert.js"></script>
-    <script src="../lib/js/bootstrap-modal.js"></script>
-    <script src="../lib/js/bootstrap-dropdown.js"></script>
-    <script src="../lib/js/bootstrap-scrollspy.js"></script>
-    <script src="../lib/js/bootstrap-tab.js"></script>
-    <script src="../lib/js/bootstrap-tooltip.js"></script>
-    <script src="../lib/js/bootstrap-popover.js"></script>
-    <script src="../lib/js/bootstrap-button.js"></script>
-    <script src="../lib/js/bootstrap-collapse.js"></script>
-    <script src="../lib/js/bootstrap-carousel.js"></script>
-    <script src="../lib/js/bootstrap-typeahead.js"></script>
-    <script src="article.js"></script>
+    </footer>
+    <!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/application.js"></script>
   </body>
 </html>
