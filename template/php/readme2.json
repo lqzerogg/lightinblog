@@ -1,0 +1,16 @@
+{
+	"articlesList" : [
+		{
+			"articleTitle" : "title",
+			"articleAuthor" : "author",
+			"article" : "this is a test article this is a test article this is a test article this is a test article",
+			"articleCategory" : "category"
+		},
+		{
+			"articleTitle" : "title",
+			"articleAuthor" : "author",
+			"article" : "this is a test article this is a test article this is a test article this is a test article this is a test article",
+			"articleCategory" : "category"
+		}
+	]
+}
