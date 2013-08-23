@@ -17,20 +17,19 @@
 		 a.address,
 		 a.introduction
 		from article a
-		where a.id is not null";
+		where a.id is not null ";
 		if($category!=0){
 	        $sql.=" and a.category in (".$category.") ";
 	    }
-		if($author!=0){ 
-			$sql.="and a.author in(".$author.") "; 
+		if($author){
+			$sql.="and a.author='$author'"; 
 		}
-		 if($title!=0){
-	    	$sql.="and a.name in(".$title.")";
-	    }
-								
+		 if($title){
+	    	$sql.="and a.title='$title'";
+	    }			
 		$result=$db->query($sql);
 		$num_results=$result->num_rows;
-		for($i=1;$i<=$num_results;$i++)
+		for($i=0;$i<$num_results;$i++)
 		{
 			$row=$result->fetch_assoc();
 			$out=array(
