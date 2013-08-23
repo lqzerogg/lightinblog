@@ -14,7 +14,7 @@
 		 a.address,
 		 a.introduction
 		from article a
-		where a.id is not null";				
+		where a.id is not null";
 		$result=$db->query($sql);
 		$num_results=$result->num_rows;
 		for($i=1;$i<=$num_results;$i++)

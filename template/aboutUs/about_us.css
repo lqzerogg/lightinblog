@@ -5,7 +5,7 @@ article {
     text-align: right;
 }
 .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-    width: 1200px;
+    width: 1200px;  
 }
 .span15{
     width:1200px;

@@ -83,6 +83,9 @@ footer p {
 }
 footer {
     text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 img.loading{
     padding-left: 25%;
