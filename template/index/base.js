@@ -42,7 +42,7 @@
     });
 	$(".btn-primary").click(function(e){
 		e.preventDefault();
-		$(".span12").html('<img class="loading" src="../lib/images/loading.gif"/>');
+		$(".span12").html('<img class="loading" src="../lib/images/icons/loading.png"/><h1><center>loading……</center></h1>');
 		var testUrl = "../php/selectblog.php";
 		var author = $("#author").val();
 		var title = $("#article").val();
