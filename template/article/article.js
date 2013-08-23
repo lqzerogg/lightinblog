@@ -38,25 +38,34 @@ $(function() {
 					id: args["id"]
 				};
 
-			$.get(url, getArgs, this.callback, "json");			
+			if(getArgs["id"]) {
+				$.get(url, getArgs, this.callback, "json");			
+			}else {
+				this.callback();
+			}
 		},
+
+		/**
+		 * @description 
+		 */
 
 		/**
 		 * @description 回调方法
 		 */
 		callback: function(json) {
-
+			console.log(json);
 			var $heroUnit = $(".hero-unit"),
 				$content = $(".content");			
-			
-			if(json) {				
-				$heroUnit.find(".caption").html(json[0]["title"]);
-				$heroUnit.find(".author .text").html(json[0]["author"]);
-				$heroUnit.find(".category .text").html(json[0]["category"]);
+			if(json && json.length > 0) {				
+				$heroUnit.find(".caption").removeClass("none").html(json[0]["title"]);
+				$heroUnit.find(".author").removeClass("none").find(".text").html(json[0]["author"]);
+				$heroUnit.find(".category").removeClass("none").find(".text").html(json[0]["category"]);
 				$content.html(json[0]["contents"]);
 			}else {
-				$heroUnit.find(".error").removeClass("none").html("不存在该文章，请返回首页");
+				$heroUnit.find(".alert").removeClass("none").html("不存在该文章，请返回首页");
 			}
+
+			$(".loading").addClass("none");
 		}
 	};
 

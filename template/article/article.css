@@ -95,3 +95,14 @@ footer {
 footer p {
     margin: 0;
 }
+.none {
+    display: none;
+}
+.loading-text {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.loading {
+    text-align: center;
+}
