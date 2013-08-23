@@ -1,6 +1,7 @@
 !function ($) {
 	var template = "";
 	var categorySelected = "";
+	var noResult = "<h2>no result</h2>";
 	var addArticle = function(data){
 		template = template + '<div class="span3" category="'+data.category+'"><div class="tile">'+
                     '<img src="../lib/images/1.jpg" alt="picture" class="tile-image"><h3 class="tile-title">'+data.title+
@@ -16,11 +17,15 @@
 			url		 : phpUrl,
 			dataType : "json",
 			success  : function(data){
-				console.log(data);
-				for(var i = 0; i < data.length ; i++){
-					addArticle(data[i]);
+				if(data.length != 0){
+					for(var i = 0; i < data.length ; i++){
+						addArticle(data[i]);
+					}
+					$(".span12").html(template);
+					
+				}else{
+					$(".span12").html(noResult);
 				}
-				$(".span12").html(template);
 			}
 		});
 	});
@@ -37,6 +42,7 @@
     });
 	$(".btn-primary").click(function(e){
 		e.preventDefault();
+		$(".span12").html('<img class="loading" src="../lib/images/loading.gif"/>');
 		var testUrl = "../php/selectblog.php";
 		var author = $("#author").val();
 		var title = $("#article").val();
@@ -69,11 +75,15 @@
 			dataType : "json",
 			data     : { category: categorySelected, author: author, title: title },
 			success  : function(data){
-				template = "";
-				for(var i = 0; i < data.length ; i++){
-					addArticle(data[i]);
+				if( data.length !=0){
+					template = "";
+					for(var i = 0; i < data.length ; i++){
+						addArticle(data[i]);
+					}
+					$(".span12").html(template);
+				}else{
+					$(".span12").html(noResult);
 				}
-				$(".span12").html(template);
 			}
 		});
 	});
