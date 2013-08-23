@@ -84,3 +84,10 @@ footer p {
 footer {
     text-align: center;
 }
+img.loading{
+    padding-left: 25%;
+}
+h2{
+    text-align: center;
+    padding-top: 17%;
+}
