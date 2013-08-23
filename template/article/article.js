@@ -55,11 +55,12 @@ $(function() {
 		callback: function(json) {
 			console.log(json);
 			var $heroUnit = $(".hero-unit"),
-				$content = $(".content");			
+				$content = $(".content"),
+				category = ["Cultrue", "Science", "Life", "Nature"];
 			if(json && json.length > 0) {				
 				$heroUnit.find(".caption").removeClass("none").html(json[0]["title"]);
 				$heroUnit.find(".author").removeClass("none").find(".text").html(json[0]["author"]);
-				$heroUnit.find(".category").removeClass("none").find(".text").html(json[0]["category"]);
+				$heroUnit.find(".category").removeClass("none").find(".text").html(category[json[0]["category"] - 1]);
 				$content.html(json[0]["contents"]);
 			}else {
 				$heroUnit.find(".alert").removeClass("none").html("不存在该文章，请返回首页");
